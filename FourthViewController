@@ -1,0 +1,45 @@
+import UIKit
+
+class FourthViewController: UIViewController {
+    
+    
+    @IBAction func generateButton(_ sender: Any) {
+    
+        let arrayUSA = ["New York", "Honolulu", "Maui", "San Francisco", "Grand Canyon", "Sonoma", "New Orleans", "Philadelphia", "San Diego", "Kauai", "Hawaii", "Boston", "Miami", "Los Angeles", "Charleston", "Yosemite", "Seattle", "Asheville,", "Denver", "Yellowstone", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming", "Juneau", "Phoenix", "Little Rock", "Sacramento", "Denver", "Hartford", "Dover", "Tallahassee", "Atlanta", "Honolulu", "Boise", "Springfield", "Indianapolis", "Des Moines", "Topeka", "Frankfort", "Baton Rouge", "Augusta", "Annapolis", "Boston", "Lansing", "Saint Paul", "Jackson", "Jefferson City", "Helena", "Lincoln", "Carson City", "Concord", "Trenton", "Santa Fe", "Albany", "Raleigh", "Bismarck", "Columbus", "Oklahoma City", "Salem", "Harrisburg", "Providence", "Columbia", "Pierre", "Nashville", "Austin", "Salt Lake City", "Montpelier", "Richmond", "Olympia", "Charleston", "Madison", "Adams", "Jefferson", "Madison", "Jackson", "Harrison", "Lincoln", "Roosevelt", "Truman", "Kennedy", "Nixon", "Ford", "Reagan", "Carter", "Clinton", "Bush", "Obama"]
+        let randomIndexUSAOne = Int(arc4random_uniform(UInt32(arrayUSA.count)))
+        let randomIndexUSATwo = Int(arc4random_uniform(UInt32(arrayUSA.count)))
+        
+        let alertVC = UIAlertController(title: "Countersign", message: ("\n") + "Challange: " + String(arrayUSA[randomIndexUSAOne]) + ("\n") + "Password: " + String(arrayUSA[randomIndexUSATwo]), preferredStyle: .alert)
+        
+        let actionSave = UIAlertAction(title: "Save", style: .default) { (action) in
+            UIPasteboard.general.string = "Challange: " + String(arrayUSA[randomIndexUSAOne]) + ("\n") + "Password: " + String(arrayUSA[randomIndexUSATwo])
+        }
+        let actionCancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+        }
+        
+        alertVC.addAction(actionSave)
+        alertVC.addAction(actionCancel)
+        self.present(alertVC, animated: true) {
+            print("Allert is show")
+        }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn (_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+}
