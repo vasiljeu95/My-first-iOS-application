@@ -1,0 +1,484 @@
+import UIKit
+
+class SecondViewController: UIViewController {
+
+    @IBOutlet weak var missionSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var weatherSegmentedControl: UISegmentedControl!
+    @IBAction func weatherSegmentedControl(_ sender: Any) {
+    }
+    @IBOutlet weak var temperatureTextField: UITextField!
+    
+    @IBAction func missionSegmentedControl(_ sender: Any) {
+        if missionSegmentedControl.selectedSegmentIndex == 0 {
+            if weatherSegmentedControl.selectedSegmentIndex == 0 {
+                let temperature = (temperatureTextField.text! as NSString).intValue
+                if temperature <= (-46) {
+                    let alertVC = UIAlertController(title: "That's all Levels", message: "and get in the MSS", preferredStyle: .alert)
+                    let actionSave = UIAlertAction(title: "Save", style: .default) { (action) in
+                        UIPasteboard.general.string = "That's all Levels" + ("\n") + " and get in the MSS"
+                    }
+                    let actionCancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+                    }
+                    alertVC.addAction(actionSave)
+                    alertVC.addAction(actionCancel)
+                    self.present(alertVC, animated: true) {
+                        print("Allert is 0-0 < (-46)")
+                    }
+                } else {
+                    if temperature > (-46) {
+                        if temperature <= (-18) {
+                            let alertVC = UIAlertController(title: "Your protectiom uniform:", message: "Level 2 + Level 5" + ("\n") + "+ Level 7", preferredStyle: .alert)
+                            let actionSave = UIAlertAction(title: "Save", style: .default) { (action) in
+                                UIPasteboard.general.string = "Your protectiom uniform:" + ("\n") + " Level 2 + Level 5 + Level 7"
+                            }
+                            let actionCancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+                            }
+                            alertVC.addAction(actionSave)
+                            alertVC.addAction(actionCancel)
+                            self.present(alertVC, animated: true) {
+                                print("Allert is 0-0 > (-46)")
+                            }
+                        } else {
+                            if temperature > (-18) {
+                                if temperature <= (-2) {
+                                    let alertVC = UIAlertController(title: "Your protectiom uniform:", message: "Level 1 + Level 2" + ("\n") + "+ Level 5", preferredStyle: .alert)
+                                    let actionSave = UIAlertAction(title: "Save", style: .default) { (action) in
+                                        UIPasteboard.general.string = "Your protectiom uniform:" + ("\n") + " Level 1 + Level 2 + Level 5"
+                                    }
+                                    let actionCancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+                                    }
+                                    alertVC.addAction(actionSave)
+                                    alertVC.addAction(actionCancel)
+                                    self.present(alertVC, animated: true) {
+                                        print("Allert is 0-0 > (-18)")
+                                    }
+                                } else {
+                                    if temperature > (-2) {
+                                        if temperature <= 6 {
+                                            let alertVC = UIAlertController(title: "Your protectiom uniform:", message: "Level 1 + Cammies" + ("\n") + "+ Level 4", preferredStyle: .alert)
+                                            let actionSave = UIAlertAction(title: "Save", style: .default) { (action) in
+                                                UIPasteboard.general.string = "Your protectiom uniform:" + ("\n") + " Level 1 + Cammies + Level 4"
+                                            }
+                                            let actionCancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+                                            }
+                                            alertVC.addAction(actionSave)
+                                            alertVC.addAction(actionCancel)
+                                            self.present(alertVC, animated: true) {
+                                                print("Allert is 0-0 > (-2)")
+                                            }
+                                        } else {
+                                            if temperature > 6 {
+                                                if temperature <= 20 {
+                                                    let alertVC = UIAlertController(title: "Your protectiom uniform:", message: "Level 1 + Cammies", preferredStyle: .alert)
+                                                    let actionSave = UIAlertAction(title: "Save", style: .default) { (action) in
+                                                        UIPasteboard.general.string = "Your protectiom uniform:" + ("\n") + " Level 1 + Cammies"
+                                                    }
+                                                    let actionCancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+                                                    }
+                                                    alertVC.addAction(actionSave)
+                                                    alertVC.addAction(actionCancel)
+                                                    self.present(alertVC, animated: true) {
+                                                        print("Allert is 0-0 > 6")
+                                                    }
+                                                } else {
+                                                    if temperature > 20 {
+                                                        if temperature <= 50 {
+                                                            let alertVC = UIAlertController(title: "Your protectiom uniform:", message: "Cammies", preferredStyle: .alert)
+                                                            let actionSave = UIAlertAction(title: "Save", style: .default) { (action) in
+                                                                UIPasteboard.general.string = "Your protectiom uniform:" + ("\n") + " Cammies"
+                                                            }
+                                                            let actionCancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+                                                            }
+                                                            alertVC.addAction(actionSave)
+                                                            alertVC.addAction(actionCancel)
+                                                            self.present(alertVC, animated: true) {
+                                                                print("Allert is 0-0 > 20")
+                                                            }
+                                                        } else {
+                                                            if temperature > 50 {
+                                                                let alertVC = UIAlertController(title: "Your protectiom uniform:", message: "Boxers", preferredStyle: .alert)
+                                                                let actionSave = UIAlertAction(title: "Save", style: .default) { (action) in
+                                                                    UIPasteboard.general.string = "Your protectiom uniform:" + ("\n") + " Boxers"
+                                                                }
+                                                                let actionCancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+                                                                }
+                                                                alertVC.addAction(actionSave)
+                                                                alertVC.addAction(actionCancel)
+                                                                self.present(alertVC, animated: true) {
+                                                                    print("Allert is 0-0 > 50")
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+            if weatherSegmentedControl.selectedSegmentIndex == 1 {
+                let temperature = (temperatureTextField.text! as NSString).integerValue
+                if temperature < (-46) {
+                    let alertVC = UIAlertController(title: "That's all Levels", message: "and get in the MSS", preferredStyle: .alert)
+                    let actionSave = UIAlertAction(title: "Save", style: .default) { (action) in
+                        UIPasteboard.general.string = "That's all Levels" + ("\n") + " and get in the MSS"
+                    }
+                    let actionCancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+                    }
+                    alertVC.addAction(actionSave)
+                    alertVC.addAction(actionCancel)
+                    self.present(alertVC, animated: true) {
+                        print("Allert is 0-1 < (-46)")
+                    }
+                } else {
+                    if temperature > (-46) {
+                        if temperature <= (-18) {
+                            let alertVC = UIAlertController(title: "Your protectiom uniform:", message: "Level 2 + Level 5" + ("\n") + "+ Level 7 + Level 7A", preferredStyle: .alert)
+                            let actionSave = UIAlertAction(title: "Save", style: .default) { (action) in
+                                UIPasteboard.general.string = "Your protectiom uniform:" + ("\n") + " Level 2 + Level 5 + Level 7 + Level 7A"
+                            }
+                            let actionCancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+                            }
+                            alertVC.addAction(actionSave)
+                            alertVC.addAction(actionCancel)
+                            self.present(alertVC, animated: true) {
+                                print("Allert is 0-1 > (-46)")
+                            }
+                        } else {
+                            if temperature > (-18) {
+                                if temperature <= (-2) {
+                                    let alertVC = UIAlertController(title: "Your protectiom uniform:", message: "Level 1 + Level 3" + ("\n") + "+ Level 5", preferredStyle: .alert)
+                                    let actionSave = UIAlertAction(title: "Save", style: .default) { (action) in
+                                        UIPasteboard.general.string = "Your protectiom uniform:" + ("\n") + " Level 1 + Level 3 + Level 5"
+                                    }
+                                    let actionCancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+                                    }
+                                    alertVC.addAction(actionSave)
+                                    alertVC.addAction(actionCancel)
+                                    self.present(alertVC, animated: true) {
+                                        print("Allert is 0-1 > (-18)")
+                                    }
+                                } else {
+                                    if temperature > (-2) {
+                                        if temperature <= 6 {
+                                            let alertVC = UIAlertController(title: "Your protectiom uniform:", message: "Level 1 + Cammies" + ("\n") + "+ Level 5", preferredStyle: .alert)
+                                            let actionSave = UIAlertAction(title: "Save", style: .default) { (action) in
+                                                UIPasteboard.general.string = "Your protectiom uniform:" + ("\n") + " Level 1 + Cammies + Level 5"
+                                            }
+                                            let actionCancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+                                            }
+                                            alertVC.addAction(actionSave)
+                                            alertVC.addAction(actionCancel)
+                                            self.present(alertVC, animated: true) {
+                                                print("Allert is 0-1 > (-2)")
+                                            }
+                                        } else {
+                                            if temperature > 6 {
+                                                if temperature <= 20 {
+                                                    let alertVC = UIAlertController(title: "Your protectiom uniform:", message: "Level 1 + Cammies" + ("\n") + "+ Level 4", preferredStyle: .alert)
+                                                    let actionSave = UIAlertAction(title: "Save", style: .default) { (action) in
+                                                        UIPasteboard.general.string = "Your protectiom uniform:" + ("\n") + " Level 1 + Cammies + Level 4"
+                                                    }
+                                                    let actionCancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+                                                    }
+                                                    alertVC.addAction(actionSave)
+                                                    alertVC.addAction(actionCancel)
+                                                    self.present(alertVC, animated: true) {
+                                                        print("Allert is 0-1 > 6")
+                                                    }
+                                                } else {
+                                                    if temperature > 20 {
+                                                        if temperature <= 50 {
+                                                            let alertVC = UIAlertController(title: "Your protectiom uniform:", message: "Level 1 + Level 4", preferredStyle: .alert)
+                                                            let actionSave = UIAlertAction(title: "Save", style: .default) { (action) in
+                                                                UIPasteboard.general.string = "Your protectiom uniform:" + ("\n") + " Level 1 + Level 4"
+                                                            }
+                                                            let actionCancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+                                                            }
+                                                            alertVC.addAction(actionSave)
+                                                            alertVC.addAction(actionCancel)
+                                                            self.present(alertVC, animated: true) {
+                                                                print("Allert is 0-1 > 20")
+                                                            }
+                                                        } else {
+                                                            if temperature > 50 {
+                                                                let alertVC = UIAlertController(title: "Your protectiom uniform:", message: "Boxers", preferredStyle: .alert)
+                                                                let actionSave = UIAlertAction(title: "Save", style: .default) { (action) in
+                                                                    UIPasteboard.general.string = "Your protectiom uniform:" + ("\n") + " Boxers"
+                                                                }
+                                                                let actionCancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+                                                                }
+                                                                alertVC.addAction(actionSave)
+                                                                alertVC.addAction(actionCancel)
+                                                                self.present(alertVC, animated: true) {
+                                                                    print("Allert is 0-1 > 50")
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        
+        if missionSegmentedControl.selectedSegmentIndex == 1 {
+            if weatherSegmentedControl.selectedSegmentIndex == 0 {
+                let temperature = (temperatureTextField.text! as NSString).integerValue
+                if temperature < (-46) {
+                    let alertVC = UIAlertController(title: "That's all Levels", message: "and get in the MSS", preferredStyle: .alert)
+                    let actionSave = UIAlertAction(title: "Save", style: .default) { (action) in
+                        UIPasteboard.general.string = "That's all Levels" + ("\n") + " and get in the MSS"
+                    }
+                    let actionCancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+                    }
+                    alertVC.addAction(actionSave)
+                    alertVC.addAction(actionCancel)
+                    self.present(alertVC, animated: true) {
+                        print("Allert is 1-0 < (-46)")
+                    }
+                } else {
+                    if temperature > (-46) {
+                        if temperature <= (-18) {
+                            let alertVC = UIAlertController(title: "Your protectiom uniform:", message: "Level 2 + Level 3" + ("\n") + "+ Level 5 + Level 7" + ("\n") + "+ Level 7A", preferredStyle: .alert)
+                            let actionSave = UIAlertAction(title: "Save", style: .default) { (action) in
+                                UIPasteboard.general.string = "Your protectiom uniform:" + ("\n") + "Level 2 + Level 3 + Level 5 + Level 7 + Level 7A"
+                            }
+                            let actionCancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+                            }
+                            alertVC.addAction(actionSave)
+                            alertVC.addAction(actionCancel)
+                            self.present(alertVC, animated: true) {
+                                print("Allert is 1-0 > (-46)")
+                            }
+                        } else {
+                            if temperature > (-18) {
+                                if temperature <= (-2) {
+                                    let alertVC = UIAlertController(title: "Your protectiom uniform:", message: "Level 1 + Level 2" + ("\n") + "+ Level 5 + Level 7", preferredStyle: .alert)
+                                    let actionSave = UIAlertAction(title: "Save", style: .default) { (action) in
+                                        UIPasteboard.general.string = "Your protectiom uniform:" + ("\n") + "Level 1 + Level 2 + Level 5 + Level 7"
+                                    }
+                                    let actionCancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+                                    }
+                                    alertVC.addAction(actionSave)
+                                    alertVC.addAction(actionCancel)
+                                    self.present(alertVC, animated: true) {
+                                        print("Allert is 1-0 > (-18)")
+                                    }
+                                } else {
+                                    if temperature > (-2) {
+                                        if temperature <= 6 {
+                                            let alertVC = UIAlertController(title: "Your protectiom uniform:", message: "Level 1 + Level 2" + ("\n") + "+ Cammies or Level 5", preferredStyle: .alert)
+                                            let actionSave = UIAlertAction(title: "Save", style: .default) { (action) in
+                                                UIPasteboard.general.string = "Your protectiom uniform:" + ("\n") + "Level 1 + Level 2 + Cammies or Level 5"
+                                            }
+                                            let actionCancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+                                            }
+                                            alertVC.addAction(actionSave)
+                                            alertVC.addAction(actionCancel)
+                                            self.present(alertVC, animated: true) {
+                                                print("Allert is 1-0 > (-2)")
+                                            }
+                                        } else {
+                                            if temperature > 6 {
+                                                if temperature <= 20 {
+                                                    let alertVC = UIAlertController(title: "Your protectiom uniform:", message: "Level 1 + Cammies" + ("\n") + "+ Level 5", preferredStyle: .alert)
+                                                    let actionSave = UIAlertAction(title: "Save", style: .default) { (action) in
+                                                        UIPasteboard.general.string = "Your protectiom uniform:" + ("\n") + "Level 1 + Cammies + Level 5"
+                                                    }
+                                                    let actionCancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+                                                    }
+                                                    alertVC.addAction(actionSave)
+                                                    alertVC.addAction(actionCancel)
+                                                    self.present(alertVC, animated: true) {
+                                                        print("Allert is 1-0 > 6")
+                                                    }
+                                                } else {
+                                                    if temperature > 20 {
+                                                        if temperature <= 50 {
+                                                            let alertVC = UIAlertController(title: "Your protectiom uniform:", message: "Level 1 + Cammies", preferredStyle: .alert)
+                                                            let actionSave = UIAlertAction(title: "Save", style: .default) { (action) in
+                                                                UIPasteboard.general.string = "Your protectiom uniform:" + ("\n") + "Level 1 + Cammies"
+                                                            }
+                                                            let actionCancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+                                                            }
+                                                            alertVC.addAction(actionSave)
+                                                            alertVC.addAction(actionCancel)
+                                                            self.present(alertVC, animated: true) {
+                                                                print("Allert is 1-0 > 20")
+                                                            }
+                                                        } else {
+                                                            if temperature > 50 {
+                                                                let alertVC = UIAlertController(title: "Your protectiom uniform:", message: "Boxers", preferredStyle: .alert)
+                                                                let actionSave = UIAlertAction(title: "Save", style: .default) { (action) in
+                                                                    UIPasteboard.general.string = "Your protectiom uniform:" + ("\n") + "Boxers"
+                                                                }
+                                                                let actionCancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+                                                                }
+                                                                alertVC.addAction(actionSave)
+                                                                alertVC.addAction(actionCancel)
+                                                                self.present(alertVC, animated: true) {
+                                                                    print("Allert is 1-0 > 50")
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+            if weatherSegmentedControl.selectedSegmentIndex == 1 {
+                let temperature = (temperatureTextField.text! as NSString).integerValue
+                if temperature < (-46) {
+                    let alertVC = UIAlertController(title: "That's all Levels", message: "and get in the MSS", preferredStyle: .alert)
+                    let actionSave = UIAlertAction(title: "Save", style: .default) { (action) in
+                        UIPasteboard.general.string = "That's all Levels" + ("\n") + " and get in the MSS"
+                    }
+                    let actionCancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+                    }
+                    alertVC.addAction(actionSave)
+                    alertVC.addAction(actionCancel)
+                    self.present(alertVC, animated: true) {
+                        print("Allert is 1-1 < (-46)")
+                    }
+                } else {
+                    if temperature > (-46) {
+                        if temperature <= (-18) {
+                            let alertVC = UIAlertController(title: "Your protectiom uniform:", message: "Level 2 + Level 3" + ("\n") + "+ Level 5 + Level 7" + ("\n") + "+ Level 7A + Level 7 type 2", preferredStyle: .alert)
+                            let actionSave = UIAlertAction(title: "Save", style: .default) { (action) in
+                                UIPasteboard.general.string = "Your protectiom uniform:" + ("\n") + "Level 2 + Level 3 + Level 5 + Level 7 + Level 7A + Level 7 type 2"
+                            }
+                            let actionCancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+                            }
+                            alertVC.addAction(actionSave)
+                            alertVC.addAction(actionCancel)
+                            self.present(alertVC, animated: true) {
+                                print("Allert is 1-1 > (-46)")
+                            }
+                        } else {
+                            if temperature > (-18) {
+                                if temperature <= (-2) {
+                                    let alertVC = UIAlertController(title: "Your protectiom uniform:", message: "Level 2 + Level 3" + ("\n") + "+ Level 5 + Level 7", preferredStyle: .alert)
+                                    let actionSave = UIAlertAction(title: "Save", style: .default) { (action) in
+                                        UIPasteboard.general.string = "Your protectiom uniform:" + ("\n") + "Level 2 + Level 3 + Level 5 + Level 7"
+                                    }
+                                    let actionCancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+                                    }
+                                    alertVC.addAction(actionSave)
+                                    alertVC.addAction(actionCancel)
+                                    self.present(alertVC, animated: true) {
+                                        print("Allert is 1-1 > (-18)")
+                                    }
+                                } else {
+                                    if temperature > (-2) {
+                                        if temperature <= 6 {
+                                            let alertVC = UIAlertController(title: "Your protectiom uniform:", message: "Level 1 + Level 3" + ("\n") + "+ Level 5 + Level 6", preferredStyle: .alert)
+                                            let actionSave = UIAlertAction(title: "Save", style: .default) { (action) in
+                                                UIPasteboard.general.string = "Your protectiom uniform:" + ("\n") + "Level 1 + Level 3 + Level 5 + Level 6"
+                                            }
+                                            let actionCancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+                                            }
+                                            alertVC.addAction(actionSave)
+                                            alertVC.addAction(actionCancel)
+                                            self.present(alertVC, animated: true) {
+                                                print("Allert is 1-1 > (-2)")
+                                            }
+                                        } else {
+                                            if temperature > 6 {
+                                                if temperature <= 20 {
+                                                    let alertVC = UIAlertController(title: "Your protectiom uniform:", message: "Level 1 + Cammies" + ("\n") + "+ Level 4 + Level 6", preferredStyle: .alert)
+                                                    let actionSave = UIAlertAction(title: "Save", style: .default) { (action) in
+                                                        UIPasteboard.general.string = "Your protectiom uniform:" + ("\n") + "Level 1 + Cammies + Level 4 + Level 6"
+                                                    }
+                                                    let actionCancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+                                                    }
+                                                    alertVC.addAction(actionSave)
+                                                    alertVC.addAction(actionCancel)
+                                                    self.present(alertVC, animated: true) {
+                                                        print("Allert is 1-1 > 6")
+                                                    }
+                                                } else {
+                                                    if temperature > 20 {
+                                                        if temperature <= 50 {
+                                                            let alertVC = UIAlertController(title: "Your protectiom uniform:", message: "Level 1 or Cammies" + ("\n") + "+ Level 6", preferredStyle: .alert)
+                                                            let actionSave = UIAlertAction(title: "Save", style: .default) { (action) in
+                                                                UIPasteboard.general.string = "Your protectiom uniform:" + ("\n") + "Level 1 or Cammies + Level 6"
+                                                            }
+                                                            let actionCancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+                                                            }
+                                                            alertVC.addAction(actionSave)
+                                                            alertVC.addAction(actionCancel)
+                                                            self.present(alertVC, animated: true) {
+                                                                print("Allert is 1-1 > 20")
+                                                            }
+                                                        } else {
+                                                            if temperature > 50 {
+                                                                let alertVC = UIAlertController(title: "Your protectiom uniform:", message: "Boxers", preferredStyle: .alert)
+                                                                let actionSave = UIAlertAction(title: "Save", style: .default) { (action) in
+                                                                    UIPasteboard.general.string = "Your protectiom uniform:" + ("\n") + "Boxers"
+                                                                }
+                                                                let actionCancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+                                                                }
+                                                                alertVC.addAction(actionSave)
+                                                                alertVC.addAction(actionCancel)
+                                                                self.present(alertVC, animated: true) {
+                                                                    print("Allert is 1-1 > 50")
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn (_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+
+}
