@@ -1,0 +1,199 @@
+//
+//  ViewController.swift
+//  ClothesAssistant
+//
+//  Created by Stepan Vasiljeu on 11/29/18.
+//  Copyright © 2018 Stepan Vasiljeu. All rights reserved.
+//
+
+import UIKit
+
+class ViewController: UIViewController {
+    
+    @IBOutlet weak var missionSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var weatherSegmentedControl: UISegmentedControl!
+    @IBAction func weatherSegmentedControl(_ sender: Any) {
+    }
+    @IBOutlet weak var temperatureTextField: UITextField!
+    
+    func alertViewController (titleAlert: String, messageAlert: String, presentAlert: String) {
+        let alertVC = UIAlertController(title: titleAlert, message: messageAlert, preferredStyle: .alert)
+        let actionSave = UIAlertAction(title: "Save", style: .default) { (action) in
+            UIPasteboard.general.string = titleAlert + ("\n") + messageAlert
+        }
+        let actionCancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+        }
+        alertVC.addAction(actionSave)
+        alertVC.addAction(actionCancel)
+        self.present(alertVC, animated: true) {
+            print(presentAlert)
+        }
+    }
+    
+    // MARK: - Constants
+    // switchLevelsCase
+    let titleAll = "That's all Levels"
+    let messageAll = "and get in the MSS"
+    let titleUniform = "Your protectiom uniform:"
+    let messageBoxers = "Boxers"
+   
+    @IBAction func missionSegmentedControl(_ sender: Any) {
+        if missionSegmentedControl.selectedSegmentIndex == 0 {
+            if weatherSegmentedControl.selectedSegmentIndex == 0 {
+                let temperature = (temperatureTextField.text! as NSString).integerValue
+                switch temperature {
+                case (-100)...(-45):
+                    let present = "Allert is 0-0 <= (-46)"
+                    alertViewController(titleAlert: titleAll, messageAlert: messageAll, presentAlert: present)
+                case -45...(-18):
+                    let message = "Level 2 + Level 5" + ("\n") + "+ Level 7"
+                    let present = "Allert is 0-0 > (-46) && <= (-18)"
+                    alertViewController(titleAlert: titleUniform, messageAlert: message, presentAlert: present)
+                case -17...(-2):
+                    let message = "Level 1 + Level 2" + ("\n") + "+ Level 5"
+                    let present = "Allert is 0-0 > (-18) && <= (-2)"
+                    alertViewController(titleAlert: titleUniform, messageAlert: message, presentAlert: present)
+                case -1...6:
+                    let message = "Level 1 + Cammies" + ("\n") + "+ Level 4"
+                    let present = "Allert is 0-0 > (-2) && <= 6"
+                    alertViewController(titleAlert: titleUniform, messageAlert: message, presentAlert: present)
+                case 7...20:
+                    let message = "Level 1 + Cammies"
+                    let present = "Allert is 0-0 > 6 && <= 20"
+                    alertViewController(titleAlert: titleUniform, messageAlert: message, presentAlert: present)
+                case 21...50:
+                    let message = "Cammies"
+                    let present = "Allert is 0-0 > 20 && <= 50"
+                    alertViewController(titleAlert: titleUniform, messageAlert: message, presentAlert: present)
+                case 51...100:
+                    let present = "Allert is 0-0 > 50"
+                    alertViewController(titleAlert: titleUniform, messageAlert: messageBoxers, presentAlert: present)
+                default:
+                    assert(false, "Temperature \(temperature) out of range")
+                }
+            }
+            
+            if weatherSegmentedControl.selectedSegmentIndex == 1 {
+                let temperature = (temperatureTextField.text! as NSString).integerValue
+                switch temperature {
+                case (-100)...(-45):
+                    let present = "Allert is 0-1 < (-46)"
+                    alertViewController(titleAlert: titleAll, messageAlert: messageAll, presentAlert: present)
+                case -45...(-18):
+                    let message = "Level 2 + Level 5" + ("\n") + "+ Level 7 + Level 7A"
+                    let present = "Allert is 0-1 > (-46) && <= (-18)"
+                    alertViewController(titleAlert: titleUniform, messageAlert: message, presentAlert: present)
+                case -17...(-2):
+                    let message = "Level 1 + Level 3" + ("\n") + "+ Level 5"
+                    let present = "Allert is 0-1 > (-18) && <= (-2)"
+                    alertViewController(titleAlert: titleUniform, messageAlert: message, presentAlert: present)
+                case -1...6:
+                    let message = "Level 1 + Cammies" + ("\n") + "+ Level 5"
+                    let present = "Allert is 0-1 > (-2) && <= 6"
+                    alertViewController(titleAlert: titleUniform, messageAlert: message, presentAlert: present)
+                case 7...20:
+                    let message = "Level 1 + Cammies" + ("\n") + "+ Level 4"
+                    let present = "Allert is 0-1 > 6 && <= 20"
+                    alertViewController(titleAlert: titleUniform, messageAlert: message, presentAlert: present)
+                case 21...50:
+                    let message = "Level 1 + Level 4"
+                    let present = "Allert is 0-1 > 20 && <= 50"
+                    alertViewController(titleAlert: titleUniform, messageAlert: message, presentAlert: present)
+                case 51...100:
+                    let present = "Allert is 0-1 > 50"
+                    alertViewController(titleAlert: titleUniform, messageAlert: messageBoxers, presentAlert: present)
+                default:
+                    assert(false, "Temperature \(temperature) out of range")
+                }
+            }
+        }
+        
+        
+        if missionSegmentedControl.selectedSegmentIndex == 1 {
+            if weatherSegmentedControl.selectedSegmentIndex == 0 {
+                let temperature = (temperatureTextField.text! as NSString).integerValue
+                switch temperature {
+                case (-100)...(-45):
+                    let present = "Allert is 1-0 < (-46)"
+                    alertViewController(titleAlert: titleAll, messageAlert: messageAll, presentAlert: present)
+                case -45...(-18):
+                    let message = "Level 2 + Level 3" + ("\n") + "+ Level 5 + Level 7" + ("\n") + "+ Level 7A"
+                    let present = "Allert is 1-0 > (-46) && <= (-18)"
+                    alertViewController(titleAlert: titleUniform, messageAlert: message, presentAlert: present)
+                case -17...(-2):
+                    let message = "Level 1 + Level 2" + ("\n") + "+ Level 5 + Level 7"
+                    let present = "Allert is 1-0 > (-18) && <= (-2)"
+                    alertViewController(titleAlert: titleUniform, messageAlert: message, presentAlert: present)
+                case -1...6:
+                    let message = "Level 1 + Level 2" + ("\n") + "+ Cammies or Level 5"
+                    let present = "Allert is 1-0 > (-2) && <= 6"
+                    alertViewController(titleAlert: titleUniform, messageAlert: message, presentAlert: present)
+                case 7...20:
+                    let message = "Level 1 + Cammies" + ("\n") + "+ Level 5"
+                    let present = "Allert is 1-0 > 6 && <= 20"
+                    alertViewController(titleAlert: titleUniform, messageAlert: message, presentAlert: present)
+                case 21...50:
+                    let message = "Level 1 + Cammies"
+                    let present = "Allert is 1-0 > 20 && <= 50"
+                    alertViewController(titleAlert: titleUniform, messageAlert: message, presentAlert: present)
+                case 51...100:
+                    let present = "Allert is 1-0 > 50"
+                    alertViewController(titleAlert: titleUniform, messageAlert: messageBoxers, presentAlert: present)
+                default:
+                    assert(false, "Temperature \(temperature) out of range")
+                }
+            }
+            
+            if weatherSegmentedControl.selectedSegmentIndex == 1 {
+                let temperature = (temperatureTextField.text! as NSString).integerValue
+                switch temperature {
+                case (-100)...(-45):
+                    let present = "Allert is 1-1 < (-46)"
+                    alertViewController(titleAlert: titleAll, messageAlert: messageAll, presentAlert: present)
+                case -45...(-18):
+                    let message = "Level 2 + Level 3 + Level 5" + ("\n") + "+ Level 7 + Level 7A + Level 7 type 2"
+                    let present = "Allert is 1-1 > (-46) && <= (-18)"
+                    alertViewController(titleAlert: titleUniform, messageAlert: message, presentAlert: present)
+                case -17...(-2):
+                    let message = "Level 2 + Level 3" + ("\n") + "+ Level 5 + Level 7"
+                    let present = "Allert is 1-1 > (-18) && <= (-2)"
+                    alertViewController(titleAlert: titleUniform, messageAlert: message, presentAlert: present)
+                case -1...6:
+                    let message = "Level 1 + Level 3" + ("\n") + "+ Level 5 + Level 6"
+                    let present = "Allert is 1-1 > (-2) && <= 6"
+                    alertViewController(titleAlert: titleUniform, messageAlert: message, presentAlert: present)
+                case 7...20:
+                    let message = "Level 1 + Cammies" + ("\n") + "+ Level 4 + Level 6"
+                    let present = "Allert is 1-1 > 6 && <= 20"
+                    alertViewController(titleAlert: titleUniform, messageAlert: message, presentAlert: present)
+                case 21...50:
+                    let message = "Level 1 or Cammies" + ("\n") + "+ Level 6"
+                    let present = "Allert is 1-1 > 20 && <= 50"
+                    alertViewController(titleAlert: titleUniform, messageAlert: message, presentAlert: present)
+                case 51...100:
+                    let present = "Allert is 1-1 > 50"
+                    alertViewController(titleAlert: titleUniform, messageAlert: messageBoxers, presentAlert: present)
+                default:
+                    assert(false, "Temperature \(temperature) out of range")
+                }
+            }
+        }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    func textFieldShouldReturn (_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+}
