@@ -31,12 +31,63 @@ class ViewController: UIViewController {
     }
     
     // MARK: - Constants
+    
     // switchLevelsCase
     let titleAll = "That's all Levels"
     let messageAll = "and get in the MSS"
     let titleUniform = "Your protectiom uniform:"
     let messageBoxers = "Boxers"
-   
+    //0-0
+    let present00case1 = "Allert is 0-0 <= (-46)"
+    let message00case2 = "Level 2 + Level 5" + ("\n") + "+ Level 7"
+    let present00case2 = "Allert is 0-0 > (-46) && <= (-18)"
+    let message00case3 = "Level 1 + Level 2" + ("\n") + "+ Level 5"
+    let present00case3 = "Allert is 0-0 > (-18) && <= (-2)"
+    let message00case4 = "Level 1 + Cammies" + ("\n") + "+ Level 4"
+    let present00case4 = "Allert is 0-0 > (-2) && <= 6"
+    let message00case5 = "Level 1 + Cammies"
+    let present00case5 = "Allert is 0-0 > 6 && <= 20"
+    let message00case6 = "Cammies"
+    let present00case6 = "Allert is 0-0 > 20 && <= 50"
+    let present00case7 = "Allert is 0-0 > 50"
+    
+    
+    // Нужно чтобы message и present передавались из тела функции
+    func switchLevelsCase (temperature: Int, messageAlert: String, presentAlert: String) {
+        switch temperature {
+        case (-100)...(-45): //case1
+            let present = present00case1
+            alertViewController(titleAlert: titleAll, messageAlert: messageAll, presentAlert: present)
+        case -45...(-18): //case2
+            let message = message00case2
+            let present = present00case2
+            alertViewController(titleAlert: titleUniform, messageAlert: message, presentAlert: present)
+        case -17...(-2): //case3
+            let message = message00case3
+            let present = present00case3
+            alertViewController(titleAlert: titleUniform, messageAlert: message, presentAlert: present)
+        case -1...6: //case4
+            let message = message00case4
+            let present = present00case4
+            alertViewController(titleAlert: titleUniform, messageAlert: message, presentAlert: present)
+        case 7...20: //case5
+            let message = message00case5
+            let present = present00case5
+            alertViewController(titleAlert: titleUniform, messageAlert: message, presentAlert: present)
+        case 21...50: //case6
+            let message = message00case6
+            let present = present00case6
+            alertViewController(titleAlert: titleUniform, messageAlert: message, presentAlert: present)
+        case 51...100: //case7
+            let present = present00case7
+            alertViewController(titleAlert: titleUniform, messageAlert: messageBoxers, presentAlert: present)
+        default:
+            assert(false, "Temperature \(temperature) out of range")
+        }
+    }
+    
+    
+    
     @IBAction func missionSegmentedControl(_ sender: Any) {
         if missionSegmentedControl.selectedSegmentIndex == 0 {
             if weatherSegmentedControl.selectedSegmentIndex == 0 {
